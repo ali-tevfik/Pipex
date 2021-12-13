@@ -4,7 +4,9 @@ RED = \033[38;5;1m
 BLUE = \033[38;5;4m
 
 SRCS	=	example_execve.c\
-			find_path.c
+			find_path.c\
+			first_fork.c\
+			second_fork.c
 
 OBJS	= $(SRCS:.c=.o)
 
