@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/16 12:44:47 by adoner        #+#    #+#                 */
-/*   Updated: 2021/12/16 16:11:35 by adoner        ########   odam.nl         */
+/*   Updated: 2021/12/17 18:50:57 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ void	parent(t_argv *data)
 	data->path2 = add_path(data->path2, len, data->envp);
 	execve(data->path2[0], data->path2, data->envp);
 	perror("Error with execve");
+	exit(127);
 }

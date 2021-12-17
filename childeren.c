@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/16 12:43:13 by adoner        #+#    #+#                 */
-/*   Updated: 2021/12/16 16:09:44 by adoner        ########   odam.nl         */
+/*   Updated: 2021/12/17 18:50:44 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,5 @@ void	childeren(t_argv *data)
 	close(data->fd[0]);
 	execve(data->path1[0], data->path1, data->envp);
 	perror("Error with execve");
+	exit(127);
 }
