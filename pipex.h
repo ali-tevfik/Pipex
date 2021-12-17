@@ -4,9 +4,10 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
-
 #include "Libft/libft.h"
 
+# define SUCCES 1
+# define ERROR 0
 typedef struct  t_argv
     {
        char *cmd1;
@@ -24,6 +25,8 @@ typedef struct  t_argv
 
 int main(int argc, char **argv, char **envp);
 char  *find_path (char **envp, char *path_name);
+void childeren(t_argv *data);
+void parent(t_argv *data);
 void my_fork(t_argv *data);
 char	**add_path(char **path, int len, char **envp);
 int how_many(char **path);

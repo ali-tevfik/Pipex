@@ -1,24 +1,38 @@
 #include "pipex.h"
 
-char *find_path (char **envp, char *path_name)
+char *find_path(char **envp, char *path_name)
 {
-	char **a;
-	for (size_t i = 0; envp[i] ; i++)
+	char	**paths;
+	int		i;
+	int		count;
+	char	*find_path;
+	char	*try_path;
+
+	count = 0;
+	i = 0;
+	while (envp[i])
 	{
-		 if (ft_strncmp(envp[i], "PATH=", 5) == 0)
+		if (ft_strncmp(envp[i], "PATH=", 5) == 0)
 		{
-			// printf("envp = %s\n",envp[i]);
-			a = ft_split(envp[i] + 5, ':');
-			for (size_t b = 0; b[a]; b++)
+			paths = ft_split(envp[i] + 5, ':');
+			while (paths[count])
 			{
-				 char *c = ft_strjoin(b[a],"/");
-				 char *deneme = ft_strjoin(c,path_name);
-				 if (access(deneme, X_OK) == 0)
-				 	return(deneme);
+				try_path = ft_strjoin(paths[count], "/");
+				find_path = ft_strjoin(try_path, path_name);
+				if (access(find_path, X_OK) == 0)
+				{
+					free(try_path);
+					return (find_path);
+				}
+				else
+				{
+					free(try_path);
+					free(find_path);
+				}
+				count++;
 			}
-
-
-        }
+		}
+		i++;
 	}
 	return (NULL);
 }

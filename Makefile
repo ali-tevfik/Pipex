@@ -3,9 +3,11 @@ NORMAL = \033[38;5;255m
 RED = \033[38;5;1m
 BLUE = \033[38;5;4m
 
-SRCS	=	example_execve.c\
+SRCS	=	pipex.c\
 			find_path.c\
-			fork.c
+			fork.c\
+			childeren.c\
+			parent.c
 
 OBJS	= $(SRCS:.c=.o)
 
