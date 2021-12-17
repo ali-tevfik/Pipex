@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/16 12:46:50 by adoner        #+#    #+#                 */
-/*   Updated: 2021/12/17 16:49:44 by adoner        ########   odam.nl         */
+/*   Updated: 2021/12/17 16:51:13 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(int argc, char **argv, char **envp)
 	t_argv	data;
 
 	if (argc == 4)
-		exit(ERROR);
+		exit(0);
 	data.cmd1 = ft_strdup(argv[2]);
 	data.cmd2 = argv[3];
 	data.file_in = argv[1];
@@ -28,7 +28,7 @@ int	main(int argc, char **argv, char **envp)
 	data.pid = fork();
 	my_fork(&data);
 	waitpid(data.pid, NULL, 0);
-	return (SUCCES);
+	return (1);
 }
 
 //hata 1 yoksa 0

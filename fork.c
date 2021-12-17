@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/16 12:45:56 by adoner        #+#    #+#                 */
-/*   Updated: 2021/12/17 16:49:38 by adoner        ########   odam.nl         */
+/*   Updated: 2021/12/17 16:51:06 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	**add_path(char **path, int len, char **envp)
 		which_path = path[0];
 	new_path = (char **)malloc(sizeof(new_path) * (len + 1));
 	if (!new_path)
-		exit(ERROR);
+		exit(0);
 	new_path[0] = which_path;
 	i = 1;
 	while (path[i])
