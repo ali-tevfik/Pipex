@@ -6,7 +6,7 @@
 /*   By: adoner <adoner@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/16 12:43:13 by adoner        #+#    #+#                 */
-/*   Updated: 2021/12/17 18:50:44 by adoner        ########   odam.nl         */
+/*   Updated: 2021/12/17 18:55:17 by adoner        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	childeren(t_argv *data)
 
 	data->i_file_in = open(data->file_in, O_RDONLY);
 	if (data->i_file_in == -1)
-		exit(1);
+		exit(ERROR);
 	dup2(data->i_file_in, 0);
 	dup2(data->fd[1], 1);
 	close(data->fd[0]);
@@ -30,5 +30,5 @@ void	childeren(t_argv *data)
 	close(data->fd[0]);
 	execve(data->path1[0], data->path1, data->envp);
 	perror("Error with execve");
-	exit(127);
+	exit(ERROR2);
 }

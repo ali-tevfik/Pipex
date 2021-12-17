@@ -7,7 +7,8 @@ SRCS	=	pipex.c\
 			find_path.c\
 			fork.c\
 			childeren.c\
-			parent.c
+			parent.c\
+			error_txt.c
 
 OBJS	= $(SRCS:.c=.o)
 

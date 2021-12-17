@@ -7,6 +7,9 @@
 # include <fcntl.h>
 # include "Libft/libft.h"
 
+# define SUCCES 0
+# define ERROR 1
+# define ERROR2 127
 typedef struct t_argv
 {
 	char	*cmd1;
@@ -24,6 +27,7 @@ typedef struct t_argv
 
 int		main(int argc, char **argv, char **envp);
 char	*find_path(char **envp, char *path_name);
+void	error_text(char *txt);
 void	childeren(t_argv *data);
 void	parent(t_argv *data);
 void	my_fork(t_argv *data);
